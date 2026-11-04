@@ -1,0 +1,4 @@
+.git
+.github
+application/logs/*.php
+!application/logs/index.html
