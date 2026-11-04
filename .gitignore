@@ -8,7 +8,10 @@
 .vscode
 
 /vendor/
-/application/vendor/
+
+# Workflows that trigger GitHub token restrictions
+.github/workflows/
+**/.github/workflows/
 
 .env.local
 .env.development.local
@@ -18,12 +21,11 @@
 !blank/.gitkeep
 desktop.ini
 
-application/vendor/
-vendor/
 .idea/
 .php_cs.cache
 .php-cs-fixer.cache
 application/logs/*
+!application/logs/index.html
 ci_sessions/
 
 uploads
