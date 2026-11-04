@@ -1,6 +1,6 @@
 FROM php:8.1-apache
 
-# Instalar dependencias e extensoes sem estourar memoria (-j$(nproc) causava OOM)
+# Instalar dependencias e extensoes necessarias
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
     libjpeg62-turbo-dev \
@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install zip \
-    && a2enmod rewrite \
+    && a2dismod mpm_event mpm_worker || true \
+    && a2enmod mpm_prefork rewrite \
     && sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf \
     && echo "ServerName localhost" >> /etc/apache2/apache2.conf \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
