@@ -1,0 +1,163 @@
+{
+    "montadoras": [{
+            "id": 1,
+            "sigla": "AUDI",
+            "nome": "AUDI"
+        },
+        {
+            "id": 2,
+            "sigla": "BMW",
+            "nome": "BMW"
+        },
+        {
+            "id": 3,
+            "sigla": "CITROEN",
+            "nome": "CITROEN"
+        },
+        {
+            "id": 4,
+            "sigla": "DAEWOO",
+            "nome": "DAEWOO"
+        },
+        {
+            "id": 5,
+            "sigla": "DODGE",
+            "nome": "DODGE"
+        },
+        {
+            "id": 6,
+            "sigla": "FIAT",
+            "nome": "FIAT"
+        },
+        {
+            "id": 7,
+            "sigla": "FORD",
+            "nome": "FORD"
+        },
+        {
+            "id": 8,
+            "sigla": "GM",
+            "nome": "CHEVROLET"
+        },
+        {
+            "id": 9,
+            "sigla": "HONDA",
+            "nome": "HONDA"
+        },
+        {
+            "id": 10,
+            "sigla": "JEEP",
+            "nome": "JEEP"
+        },
+        {
+            "id": 11,
+            "sigla": "MERCEDES BENZ",
+            "nome": "MERCEDES BENZ"
+        },
+        {
+            "id": 12,
+            "sigla": "VOLKSWAGEN",
+            "nome": "VOLKSWAGEN"
+        },
+        {
+            "id": 13,
+            "sigla": "VOLVO",
+            "nome": "VOLVO"
+        },
+        {
+            "id": 14,
+            "sigla": "TOYOTA",
+            "nome": "TOYOTA"
+        },
+        {
+            "id": 15,
+            "sigla": "RENAULT",
+            "nome": "RENAULT"
+        },
+        {
+            "id": 16,
+            "sigla": "PEUGEOT",
+            "nome": "PEUGEOT"
+        },
+        {
+            "id": 17,
+            "sigla": "MITSUBISHI",
+            "nome": "MITSUBISHI"
+        },
+        {
+            "id": 18,
+            "sigla": "CHRYSLER",
+            "nome": "CHRYSLER"
+        },
+        {
+            "id": 19,
+            "sigla": "ALFA ROMEO",
+            "nome": "ALFA ROMEO"
+        },
+        {
+            "id": 20,
+            "sigla": "BUGGY",
+            "nome": "BUGGY"
+        },
+        {
+            "id": 21,
+            "sigla": "PUMA",
+            "nome": "PUMA"
+        },
+        {
+            "id": 22,
+            "sigla": "WILLYS",
+            "nome": "WILLYS"
+        },
+        {
+            "id": 23,
+            "sigla": "KIA MOTORS",
+            "nome": "KIA MOTORS"
+        },
+        {
+            "id": 24,
+            "sigla": "LADA",
+            "nome": "LADA"
+        },
+		 {
+            "id": 25,
+            "sigla": "COBRA",
+            "nome": "COBRA"
+        },
+		 {
+            "id": 26,
+            "sigla": "HYUNDAI",
+            "nome": "HYUNDAI"
+        },
+		 {
+            "id": 27,
+            "sigla": "NISSAN",
+            "nome": "NISSAN"
+        },
+		 {
+            "id": 28,
+            "sigla": "BY CRISTO",
+            "nome": "BY CRISTO"
+        },
+		 {
+            "id": 29,
+            "sigla": "JEEP",
+            "nome": "JEEP"
+        },
+		 {
+            "id": 30,
+            "sigla": "MP",
+            "nome": "MP"
+        },
+		 {
+            "id": 31,
+            "sigla": "SEAT",
+            "nome": "SEAT"
+        },
+        {
+            "id": 32,
+            "sigla": "GURGEL",
+            "nome": "GURGEL"
+        }
+    ]
+}
