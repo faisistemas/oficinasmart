@@ -16,7 +16,12 @@ echo "Configuring Apache to listen on port ${PORT}..."
 sed -i "s/Listen [0-9]*/Listen ${PORT}/g" /etc/apache2/ports.conf
 sed -i "s/<VirtualHost \*:[0-9]*>/<VirtualHost *:${PORT}>/g" /etc/apache2/sites-available/000-default.conf
 
-# 3. Clean any existing apache pid
+# 3. Source apache envvars if present
+if [ -f /etc/apache2/envvars ]; then
+    . /etc/apache2/envvars
+fi
+
+# Clean any existing apache pid
 rm -f /var/run/apache2/apache2.pid /var/run/apache2/httpd.pid || true
 
 # 4. Initialize database if connected to Railway MySQL
@@ -25,6 +30,6 @@ if [ -n "$MYSQLHOST" ]; then
     php /var/www/html/init-db.php || true
 fi
 
-# 5. Launch Apache
-echo "Starting Apache in foreground on port ${PORT}..."
-exec apache2 -DFOREGROUND
+# 5. Launch Apache using the official apache2-foreground wrapper
+echo "Starting Apache on port ${PORT}..."
+exec apache2-foreground
