@@ -1,7 +1,7 @@
 FROM php:8.1-apache
 
-# 1. Instalar dependencias do sistema
-RUN apt-get update && apt-get install -y \
+# Instalar dependencias e extensoes sem estourar memoria (-j$(nproc) causava OOM)
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
@@ -9,23 +9,20 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     zip \
     unzip \
-    && rm -rf /var/lib/apt/lists/*
-
-# 2. Configurar e instalar extensoes PHP necessarias
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd mysqli pdo_mysql zip
-
-# 3. Configurar Apache
-RUN a2enmod rewrite \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install mysqli \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install zip \
+    && a2enmod rewrite \
     && sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf \
-    && echo "ServerName localhost" >> /etc/apache2/apache2.conf
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
 
-# 4. Copiar arquivos da aplicacao
 COPY --chown=www-data:www-data . /var/www/html/
 
-# 5. Garantir diretorios de cache e logs com permissoes
 RUN mkdir -p /var/www/html/application/cache /var/www/html/application/logs \
     && chmod -R 777 /var/www/html/application/cache /var/www/html/application/logs
 
